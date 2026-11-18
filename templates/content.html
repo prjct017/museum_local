@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Веб-ресурсы мультимедийного контента по направлениям</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f4f6f9;
+    color: #2c3e50;
+    padding: 40px 20px;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 32px 40px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a252f;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #e1e8ed;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  /* Корневой список */
+  .tree > li {
+    margin-bottom: 6px;
+  }
+
+  /* Пункт верхнего уровня */
+  .tree > li > .node {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1a3a5c;
+    background: #eaf1f8;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .tree > li > .node:hover {
+    background: #dbe7f3;
+  }
+
+  /* Маркер-стрелка */
+  .node .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid #5a7a9a;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .node.open .arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Вложенные списки */
+  .node + ul {
+    display: none;
+    margin: 4px 0 8px 28px;
+    padding-left: 16px;
+    border-left: 2px solid #d5e0ea;
+  }
+
+  .node.open + ul {
+    display: block;
+  }
+
+  /* Подзаголовки 2-го уровня */
+  .node + ul > li > .node {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    transition: background 0.15s;
+  }
+
+  .node + ul > li > .node:hover {
+    background: #f0f4f8;
+  }
+
+  /* Подзаголовки 3-го уровня (листья) */
+  .node + ul > li > ul > li {
+    font-size: 0.9rem;
+    color: #4a5a6a;
+    padding: 5px 10px 5px 22px;
+    position: relative;
+  }
+
+  .node + ul > li > ul > li::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background: #8aa4bc;
+    border-radius: 50%;
+  }
+
+  /* Неактивные (пустые) пункты без детей — без стрелки */
+  .node.leaf {
+    cursor: default;
+  }
+
+  .node.leaf .arrow {
+    display: none;
+  }
+
+  .node.leaf:hover {
+    background: transparent !important;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.15rem;
+    }
+    .node + ul {
+      margin-left: 12px;
+      padding-left: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Веб-ресурсы мультимедийного контента по направлениям</h1>
+
+  <a href="/navigator/" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #eaf1f8; color: #1a3a5c; text-decoration: none; border-radius: 8px; font-weight: 600; margin-bottom: 20px; transition: background 0.2s;" onmouseover="this.style.background='#dbe7f3'" onmouseout="this.style.background='#eaf1f8'">
+    ← Вернуться на главную
+  </a>
+
+  <ul class="tree">
+    <!-- ВОЕННО-ПАТРИОТИЧЕСКОЕ -->
+    <li>
+      <div class="node">Военно-патриотическое</div>
+      <ul>
+        <li><div class="node leaf">Книга памяти Великая Отечественная война (1941–1945)</div></li>
+        <li><div class="node leaf">Книга памяти Афганская война и чеченский конфликт</div></li>
+        <li><div class="node leaf">Книга памяти Специальная военная операция</div></li>
+        <li><div class="node leaf">Сквер Аносовец</div></li>
+        <li><div class="node leaf">Сталинград в истории Златоуста</div></li>
+        <li><div class="node leaf">Стихи ветеранам ВОВ. Апольков Александр гр. ПО-11</div></li>
+        <li><div class="node leaf">Стихи ветеранам ВОВ. Анферов Дмитрий гр. ПО-11</div></li>
+        <li><div class="node leaf">Победа Сталинградской битвы</div></li>
+        <li><div class="node leaf">Торжественное открытие Книги памяти</div></li>
+        <li><div class="node leaf">Бессмертный полк</div></li>
+      </ul>
+    </li>
+
+    <!-- НАГРАДНАЯ ДОКУМЕНТАЛИСТИКА -->
+    <li>
+      <div class="node">Наградная документалистика</div>
+      <ul>
+        <li><div class="node leaf">Книга почёта (1976–2005)</div></li>
+        <li><div class="node leaf">Социалистическое соревнование</div></li>
+        <li><div class="node leaf">Наши ветераны</div></li>
+        <li><div class="node leaf">Наградные материалы 2018–2024 гг.</div></li>
+        <li><div class="node leaf">Наша гордость выпускники (1938–2016 гг.)</div></li>
+      </ul>
+    </li>
+
+    <!-- ИНКЛЮЗИВНОЕ ОБУЧЕНИЕ -->
+    <li>
+      <div class="node">Инклюзивное обучение</div>
+      <ul>
+        <li><div class="node leaf">Видео ролик о ЛВОЗ</div></li>
+        <li><div class="node leaf">Абилимпикс</div></li>
+        <li><div class="node leaf">О группе ГХ-81</div></li>
+        <li><div class="node leaf">Обучение студентов ОВЗ</div></li>
+        <li><div class="node leaf">Безбарьерная среда</div></li>
+        <li><div class="node leaf">Управление профессиональным развитием студентов с ОВЗ</div></li>
+        <li><div class="node leaf">Организация профессионального образования лиц с ОВЗ</div></li>
+      </ul>
+    </li>
+
+    <!-- ЭКОЛОГИЧЕСКОЕ -->
+    <li>
+      <div class="node">Экологическое</div>
+      <ul>
+        <li><div class="node leaf">Всероссийский конкурс «Экологический марафон»</div></li>
+        <li><div class="node leaf">Эко-портал</div></li>
+      </ul>
+    </li>
+
+    <!-- НСО ИНТЕЛЛЕКТУАЛ -->
+    <li>
+      <div class="node">НСО «Интеллектуал»</div>
+      <ul>
+        <li><div class="node leaf">Форум «Проктория» г. Ярославль 2021 г.</div></li>
+        <li><div class="node leaf">Электронная книга «Аносовец опередивший время»</div></li>
+        <li><div class="node leaf">Книга «Аносовец опередивший время» текстовый формат</div></li>
+        <li><div class="node leaf">Книга «Наши проекты»</div></li>
+        <li><div class="node leaf">Всероссийский конкурс «Студент — 2025»</div></li>
+        <li><div class="node leaf">Кибербезопасность</div></li>
+      </ul>
+    </li>
+
+    <!-- ПАРАД ЗВЁЗД -->
+    <li>
+      <div class="node leaf">Парад звёзд</div>
+    </li>
+
+    <!-- ПОДКАСТЫ ЗЛАТИК -->
+    <li>
+      <div class="node">Подкасты Златик</div>
+      <ul>
+        <li><div class="node leaf">Подкаст Златик литература</div></li>
+        <li><div class="node leaf">Сайт</div></li>
+        <li><div class="node leaf">История создания книги «Памяти погибших на СВО»</div></li>
+        <li><div class="node leaf">История возникновения КВН</div></li>
+      </ul>
+    </li>
+
+    <!-- ИСТОРИЧЕСКИЕ ВЕХИ КОЛЛЕДЖА -->
+    <li>
+      <div class="node">Исторические вехи колледжа</div>
+      <ul>
+        <li><div class="node leaf">Книга «Письма выпускников»</div></li>
+        <li>
+          <div class="node">О колледже</div>
+          <ul>
+            <li>Видео к юбилею колледжа</li>
+          </ul>
+        </li>
+        <li><div class="node leaf">Сайт (2020–2024 гг.)</div></li>
+        <li><div class="node leaf">Виртуальный музей (1907–2019 гг.)</div></li>
+        <li><div class="node leaf">Электронный помощник</div></li>
+        <li><div class="node leaf">Экспонаты</div></li>
+        <li><div class="node leaf">Виртуальный музей</div></li>
+        <li><div class="node leaf">История колледжа</div></li>
+        <li><div class="node leaf">Лица Златоуста (Сидоров В.В.)</div></li>
+        <li><div class="node leaf">30 лет — директор Златик — Сидоров В.В.</div></li>
+      </ul>
+    </li>
+
+    <!-- СПЕЦИАЛЬНОСТИ -->
+    <li>
+      <div class="node">Специальности</div>
+      <ul>
+        <li>
+          <div class="node">Информационные системы и программирование</div>
+          <ul>
+            <li>Книга «10 лет специальности»</li>
+            <li>20 лет специальности «Программирование в компьютерных системах»</li>
+            <li>Итог «Златик»</li>
+            <li>Цифровые технологии в реверсивном инжиниринге</li>
+            <li>Зачётка 2024</li>
+            <li>Зачётка 2026</li>
+            <li>Реверсивный инжиниринг</li>
+            <li>Разработка мини-практик</li>
+            <li>Аносовские чтения (к 100-летию колледжа)</li>
+            <li>Декада ИТ (2015 г.)</li>
+            <li>Открытие декады ИТ (2015 г.)</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Операционная деятельность в логистике</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Технология машиностроения</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Аддитивные технологии</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Техническое обслуживание и ремонт двигателей, систем и агрегатов автомобилей</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Эксплуатация беспилотных авиационных систем</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Юриспруденция</div>
+          <ul>
+            <li>Зачётка</li>
+            <li>Интервью с Л.М. Низамутдиновым</li>
+          </ul>
+        </li>
+        <li>
+          <div class="node">Эксплуатация и обслуживание электрического и электромеханического оборудования</div>
+          <ul>
+            <li>Зачётка</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <!-- AI-АССИСТЕНТЫ -->
+    <li>
+      <div class="node">AI-ассистенты</div>
+      <ul>
+        <li><div class="node leaf">AI-ассистент 09.02.07 ИС и П</div></li>
+        <li><div class="node leaf">AI-ассистент 15.02.16 ТМ</div></li>
+        <li><div class="node leaf">AI-ассистент 25.02.08 ЭБАС</div></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script>
+  // Раскрытие/скрытие вложенных списков
+  document.querySelectorAll('.node').forEach(function (node) {
+    // Если у пункта нет следующего ul — это лист, пропускаем
+    if (node.classList.contains('leaf')) return;
+
+    node.addEventListener('click', function (e) {
+      e.stopPropagation();
+      node.classList.toggle('open');
+    });
+  });
+
+  // По умолчанию раскрываем только пункты верхнего уровня,
+  // у которых есть дети (для наглядности можно оставить закрытыми)
+  document.querySelectorAll('.tree > li > .node').forEach(function (node) {
+    if (!node.classList.contains('leaf')) {
+      node.classList.add('open');
+    }
+  });
+</script>
+</body>
+</html>
